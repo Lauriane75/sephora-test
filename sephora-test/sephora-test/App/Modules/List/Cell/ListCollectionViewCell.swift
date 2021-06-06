@@ -11,6 +11,13 @@ final class ListCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Outlet
     
+    private let imageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.clipsToBounds = true
+        imageView.contentMode = .scaleAspectFill
+        return imageView
+    }()
+    
     private let idLabel: UILabel = {
         let idLabel = UILabel()
         idLabel.textAlignment = .center
@@ -23,7 +30,8 @@ final class ListCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        contentView.addSubview(idLabel)
+        contentView.addSubview(imageView)
+//        contentView.addSubview(idLabel)
     }
     
     required init?(coder: NSCoder) {
@@ -33,16 +41,19 @@ final class ListCollectionViewCell: UICollectionViewCell {
     // MARK: - Configure
     
     func configure(with visibleProductItem: ProductItem) {
+        imageView.image = UIImage(named: visibleProductItem.id)
         idLabel.text = visibleProductItem.id
     }
     
     override func prepareForReuse() {
         super.prepareForReuse()
+        imageView.image = nil
         idLabel.text = nil
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        imageView.frame = contentView.bounds
         idLabel.frame = contentView.bounds
     }
     

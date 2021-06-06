@@ -43,14 +43,8 @@ class ListViewController: UIViewController {
         collectionView.delegate = listCollectionViewDataSource
         
         setElementaddSubview()
-        
-        createElementsConstraints()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        viewModel.viewWillAppear()
+                
+        viewModel.viewDidLoad()
         
         bind(to: viewModel)
         
@@ -66,10 +60,6 @@ class ListViewController: UIViewController {
         view.addSubview(collectionView)
     }
     
-    func createElementsConstraints() {
-        
-    }
-    
     fileprivate func bind(to viewModel: ListViewModel) {
         
         viewModel.visibleProductItem = { [weak self] item in
@@ -77,7 +67,6 @@ class ListViewController: UIViewController {
             self.listCollectionViewDataSource.update(with: item)
             self.collectionView.reloadData()
         }
-        
     }
     
     fileprivate func bind(to source: ListCollectionViewDataSource) {

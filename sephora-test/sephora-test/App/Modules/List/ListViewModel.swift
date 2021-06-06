@@ -41,7 +41,7 @@ final class ListViewModel {
     
     // MARK: - Input
     
-    func viewWillAppear() {        
+    func viewDidLoad() {
         repository.getProductList { result in
             switch result {
             case .success(value: let productList):
