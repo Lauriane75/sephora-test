@@ -34,16 +34,16 @@ final class ListViewModel {
     
     func viewDidLoad() {
         labelText?("ListView")
-
-        repository.getProduct { result in
+        
+        repository.getProductList { result in
             switch result {
-            case .success(let productItem):
+            case .success(value: let productItem):
                 print("productItem = \(String(describing: productItem))")
-                print("product count = \(String(describing: productItem.first?.items.count))")
-
-            case .failure(let error):
-                print("error = \(error.localizedDescription)")
+            case .failure(error: let error):
+                print(error.localizedDescription)
             }
+        } error: { _ in
+            print("call dataBase")
         }
     }
     

@@ -8,7 +8,7 @@
 import Foundation
 
 protocol RepositoryType: AnyObject {
-    func getProduct(completion: @escaping(Result<[Product], Error>) -> Void)
+    func getProductList(completion: @escaping (CompletionResult<Product>) -> Void, error: @escaping (String) -> Void)
 }
 
 class Repository: RepositoryType {
@@ -21,27 +21,25 @@ class Repository: RepositoryType {
     init(context: Context) {
         self.context = context
     }
-    
-    func getProduct(completion: @escaping(Result<[Product], Error>) -> Void) {
+
+    func getProductList(completion: @escaping (CompletionResult<Product>) -> Void, error: @escaping (String) -> Void) {
 
         let urlString = "https://sephoraios.github.io/items.json"
 
-        guard let url = URL(string: urlString) else { print("invalid URL"); return }
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
-            print("data = \(String(describing: data))")
-            print("response = \(String(describing: response))")
-            guard error == nil else { print("Error = \(String(describing: error?.localizedDescription))"); return }
-            guard data != nil else { return }
-            do {
-                let result = try JSONDecoder().decode(Product.self, from: data!)
-                print("result = \(String(describing: result))")
-                completion(.success([result]))
-            } catch {
-                completion(.failure(error))
-                print(error.localizedDescription)
+        guard let url = URL(string: urlString) else { return }
+
+        context.client.request(type: Product.self, endPointType: .GET, url: url, cancelledBy: token) { product in
+            switch product {
+            case .success(value: let productItem):
+                let result: Product = productItem
+                completion(.success(value: result))
+            case .failure(error: let onError):
+                error(onError.localizedDescription)
+                print("error = \(String(describing: error))")
             }
-        }.resume()
+        }
     }
+
     
 }
 
