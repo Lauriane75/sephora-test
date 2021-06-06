@@ -1,0 +1,607 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5BA19723266D43FD0018B19E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA19722266D43FD0018B19E /* AppDelegate.swift */; };
+		5BA19725266D43FD0018B19E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA19724266D43FD0018B19E /* SceneDelegate.swift */; };
+		5BA19727266D43FD0018B19E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA19726266D43FD0018B19E /* ViewController.swift */; };
+		5BA1972D266D43FD0018B19E /* sephora_test.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5BA1972B266D43FD0018B19E /* sephora_test.xcdatamodeld */; };
+		5BA1972F266D43FE0018B19E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BA1972E266D43FE0018B19E /* Assets.xcassets */; };
+		5BA19732266D43FE0018B19E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BA19730266D43FE0018B19E /* LaunchScreen.storyboard */; };
+		5BA1973D266D43FE0018B19E /* sephora_testTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA1973C266D43FE0018B19E /* sephora_testTests.swift */; };
+		5BA19748266D43FE0018B19E /* sephora_testUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA19747266D43FE0018B19E /* sephora_testUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5BA19739266D43FE0018B19E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5BA19717266D43FD0018B19E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5BA1971E266D43FD0018B19E;
+			remoteInfo = "sephora-test";
+		};
+		5BA19744266D43FE0018B19E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5BA19717266D43FD0018B19E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5BA1971E266D43FD0018B19E;
+			remoteInfo = "sephora-test";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5BA1971F266D43FD0018B19E /* sephora-test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "sephora-test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BA19722266D43FD0018B19E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5BA19724266D43FD0018B19E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		5BA19726266D43FD0018B19E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5BA1972C266D43FD0018B19E /* sephora_test.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = sephora_test.xcdatamodel; sourceTree = "<group>"; };
+		5BA1972E266D43FE0018B19E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5BA19731266D43FE0018B19E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5BA19733266D43FE0018B19E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5BA19738266D43FE0018B19E /* sephora-testTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "sephora-testTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BA1973C266D43FE0018B19E /* sephora_testTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sephora_testTests.swift; sourceTree = "<group>"; };
+		5BA1973E266D43FE0018B19E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5BA19743266D43FE0018B19E /* sephora-testUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "sephora-testUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BA19747266D43FE0018B19E /* sephora_testUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sephora_testUITests.swift; sourceTree = "<group>"; };
+		5BA19749266D43FE0018B19E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5BA1971C266D43FD0018B19E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BA19735266D43FE0018B19E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BA19740266D43FE0018B19E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5BA19716266D43FD0018B19E = {
+			isa = PBXGroup;
+			children = (
+				5BA19721266D43FD0018B19E /* sephora-test */,
+				5BA1973B266D43FE0018B19E /* sephora-testTests */,
+				5BA19746266D43FE0018B19E /* sephora-testUITests */,
+				5BA19720266D43FD0018B19E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5BA19720266D43FD0018B19E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5BA1971F266D43FD0018B19E /* sephora-test.app */,
+				5BA19738266D43FE0018B19E /* sephora-testTests.xctest */,
+				5BA19743266D43FE0018B19E /* sephora-testUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5BA19721266D43FD0018B19E /* sephora-test */ = {
+			isa = PBXGroup;
+			children = (
+				5BA19722266D43FD0018B19E /* AppDelegate.swift */,
+				5BA19724266D43FD0018B19E /* SceneDelegate.swift */,
+				5BA19726266D43FD0018B19E /* ViewController.swift */,
+				5BA1972E266D43FE0018B19E /* Assets.xcassets */,
+				5BA19730266D43FE0018B19E /* LaunchScreen.storyboard */,
+				5BA19733266D43FE0018B19E /* Info.plist */,
+				5BA1972B266D43FD0018B19E /* sephora_test.xcdatamodeld */,
+			);
+			path = "sephora-test";
+			sourceTree = "<group>";
+		};
+		5BA1973B266D43FE0018B19E /* sephora-testTests */ = {
+			isa = PBXGroup;
+			children = (
+				5BA1973C266D43FE0018B19E /* sephora_testTests.swift */,
+				5BA1973E266D43FE0018B19E /* Info.plist */,
+			);
+			path = "sephora-testTests";
+			sourceTree = "<group>";
+		};
+		5BA19746266D43FE0018B19E /* sephora-testUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5BA19747266D43FE0018B19E /* sephora_testUITests.swift */,
+				5BA19749266D43FE0018B19E /* Info.plist */,
+			);
+			path = "sephora-testUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5BA1971E266D43FD0018B19E /* sephora-test */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5BA1974C266D43FE0018B19E /* Build configuration list for PBXNativeTarget "sephora-test" */;
+			buildPhases = (
+				5BA1971B266D43FD0018B19E /* Sources */,
+				5BA1971C266D43FD0018B19E /* Frameworks */,
+				5BA1971D266D43FD0018B19E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "sephora-test";
+			productName = "sephora-test";
+			productReference = 5BA1971F266D43FD0018B19E /* sephora-test.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5BA19737266D43FE0018B19E /* sephora-testTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5BA1974F266D43FE0018B19E /* Build configuration list for PBXNativeTarget "sephora-testTests" */;
+			buildPhases = (
+				5BA19734266D43FE0018B19E /* Sources */,
+				5BA19735266D43FE0018B19E /* Frameworks */,
+				5BA19736266D43FE0018B19E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5BA1973A266D43FE0018B19E /* PBXTargetDependency */,
+			);
+			name = "sephora-testTests";
+			productName = "sephora-testTests";
+			productReference = 5BA19738266D43FE0018B19E /* sephora-testTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5BA19742266D43FE0018B19E /* sephora-testUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5BA19752266D43FE0018B19E /* Build configuration list for PBXNativeTarget "sephora-testUITests" */;
+			buildPhases = (
+				5BA1973F266D43FE0018B19E /* Sources */,
+				5BA19740266D43FE0018B19E /* Frameworks */,
+				5BA19741266D43FE0018B19E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5BA19745266D43FE0018B19E /* PBXTargetDependency */,
+			);
+			name = "sephora-testUITests";
+			productName = "sephora-testUITests";
+			productReference = 5BA19743266D43FE0018B19E /* sephora-testUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5BA19717266D43FD0018B19E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					5BA1971E266D43FD0018B19E = {
+						CreatedOnToolsVersion = 12.5;
+					};
+					5BA19737266D43FE0018B19E = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = 5BA1971E266D43FD0018B19E;
+					};
+					5BA19742266D43FE0018B19E = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = 5BA1971E266D43FD0018B19E;
+					};
+				};
+			};
+			buildConfigurationList = 5BA1971A266D43FD0018B19E /* Build configuration list for PBXProject "sephora-test" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5BA19716266D43FD0018B19E;
+			productRefGroup = 5BA19720266D43FD0018B19E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5BA1971E266D43FD0018B19E /* sephora-test */,
+				5BA19737266D43FE0018B19E /* sephora-testTests */,
+				5BA19742266D43FE0018B19E /* sephora-testUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5BA1971D266D43FD0018B19E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BA19732266D43FE0018B19E /* LaunchScreen.storyboard in Resources */,
+				5BA1972F266D43FE0018B19E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BA19736266D43FE0018B19E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BA19741266D43FE0018B19E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5BA1971B266D43FD0018B19E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BA19727266D43FD0018B19E /* ViewController.swift in Sources */,
+				5BA19723266D43FD0018B19E /* AppDelegate.swift in Sources */,
+				5BA1972D266D43FD0018B19E /* sephora_test.xcdatamodeld in Sources */,
+				5BA19725266D43FD0018B19E /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BA19734266D43FE0018B19E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BA1973D266D43FE0018B19E /* sephora_testTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BA1973F266D43FE0018B19E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BA19748266D43FE0018B19E /* sephora_testUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5BA1973A266D43FE0018B19E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5BA1971E266D43FD0018B19E /* sephora-test */;
+			targetProxy = 5BA19739266D43FE0018B19E /* PBXContainerItemProxy */;
+		};
+		5BA19745266D43FE0018B19E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5BA1971E266D43FD0018B19E /* sephora-test */;
+			targetProxy = 5BA19744266D43FE0018B19E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5BA19730266D43FE0018B19E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5BA19731266D43FE0018B19E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5BA1974A266D43FE0018B19E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5BA1974B266D43FE0018B19E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5BA1974D266D43FE0018B19E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.0.0;
+				DEVELOPMENT_TEAM = 568UZNMWK9;
+				INFOPLIST_FILE = "sephora-test/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "haydari.lauriane.com.sephora-test";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		5BA1974E266D43FE0018B19E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.0.0;
+				DEVELOPMENT_TEAM = 568UZNMWK9;
+				INFOPLIST_FILE = "sephora-test/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "haydari.lauriane.com.sephora-test";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		5BA19750266D43FE0018B19E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 568UZNMWK9;
+				INFOPLIST_FILE = "sephora-testTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "haydari.lauriane.com.sephora-testTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/sephora-test.app/sephora-test";
+			};
+			name = Debug;
+		};
+		5BA19751266D43FE0018B19E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 568UZNMWK9;
+				INFOPLIST_FILE = "sephora-testTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "haydari.lauriane.com.sephora-testTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/sephora-test.app/sephora-test";
+			};
+			name = Release;
+		};
+		5BA19753266D43FE0018B19E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 568UZNMWK9;
+				INFOPLIST_FILE = "sephora-testUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "haydari.lauriane.com.sephora-testUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "sephora-test";
+			};
+			name = Debug;
+		};
+		5BA19754266D43FE0018B19E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 568UZNMWK9;
+				INFOPLIST_FILE = "sephora-testUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "haydari.lauriane.com.sephora-testUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "sephora-test";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5BA1971A266D43FD0018B19E /* Build configuration list for PBXProject "sephora-test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5BA1974A266D43FE0018B19E /* Debug */,
+				5BA1974B266D43FE0018B19E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5BA1974C266D43FE0018B19E /* Build configuration list for PBXNativeTarget "sephora-test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5BA1974D266D43FE0018B19E /* Debug */,
+				5BA1974E266D43FE0018B19E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5BA1974F266D43FE0018B19E /* Build configuration list for PBXNativeTarget "sephora-testTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5BA19750266D43FE0018B19E /* Debug */,
+				5BA19751266D43FE0018B19E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5BA19752266D43FE0018B19E /* Build configuration list for PBXNativeTarget "sephora-testUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5BA19753266D43FE0018B19E /* Debug */,
+				5BA19754266D43FE0018B19E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5BA1972B266D43FD0018B19E /* sephora_test.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5BA1972C266D43FD0018B19E /* sephora_test.xcdatamodel */,
+			);
+			currentVersion = 5BA1972C266D43FD0018B19E /* sephora_test.xcdatamodel */;
+			path = sephora_test.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 5BA19717266D43FD0018B19E /* Project object */;
+}
