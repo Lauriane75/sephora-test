@@ -11,21 +11,20 @@ class ListViewController: UIViewController {
     
     // MARK: - Outlets
     
-    var stackView = UIStackView()
+    private let collectionView: CustomCollectionView
     
-    private let button: CustomButton
-
     // MARK: - Properties
     
     var viewModel: ListViewModel!
-
+    
+    private var listCollectionViewDataSource = ListCollectionViewDataSource()
+    
     // MARK: - Initializer
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        button = CustomButton(textColor: .white, withBackgroundColor: .black, font: Constant.font.font16, cornerRadius: 15)
         
-        stackView.addArrangedSubview(button)
-                
+        self.collectionView = CustomCollectionView(frame: .zero, collectionViewLayout: ListViewController.createLayout())
+        
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
     
@@ -33,49 +32,127 @@ class ListViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-
     // MARK: - View life cycle
-
+    
     override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .red
+        super.viewDidLoad()                
+        collectionView.register(ListCollectionViewCell.self, forCellWithReuseIdentifier: "ListCollectionViewCell")
+        collectionView.frame = view.bounds
+        collectionView.backgroundColor = .white
+        collectionView.dataSource = listCollectionViewDataSource
+        collectionView.delegate = listCollectionViewDataSource
         
         setElementaddSubview()
         
         createElementsConstraints()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        viewModel.viewWillAppear()
         
         bind(to: viewModel)
         
-        viewModel.viewDidLoad()
+        bind(to: listCollectionViewDataSource)
     }
     
     // MARK: - Action
     
-    @objc func didPressButton() {
-        viewModel.didSelectItem()
-    }
-
+    
     // MARK: - Private Functions
     
     func setElementaddSubview() {
-        view.addSubview(button)
-        
+        view.addSubview(collectionView)
     }
     
     func createElementsConstraints() {
-        // titleLabel
-        button.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        button.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.1).isActive = true
-        button.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        button.addTarget(self, action: #selector(didPressButton), for: .touchUpInside)
+        
     }
     
     fileprivate func bind(to viewModel: ListViewModel) {
-        viewModel.labelText = { [weak self] text in
-            self?.button.setTitle(text, for: .normal)
+        
+        viewModel.visibleProductItem = { [weak self] item in
+            guard let self = self else { return }
+            self.listCollectionViewDataSource.update(with: item)
+            self.collectionView.reloadData()
         }
         
     }
-
+    
+    fileprivate func bind(to source: ListCollectionViewDataSource) {
+        source.selectedItem = viewModel.didSelectItem
+    }
+    
+    static func createLayout() -> UICollectionViewCompositionalLayout {
+        // item
+        let item = NSCollectionLayoutItem(
+            layoutSize: NSCollectionLayoutSize(
+                widthDimension: .fractionalWidth(2/3),
+                heightDimension: .fractionalHeight(1)
+            )
+        )
+        
+        item.contentInsets = NSDirectionalEdgeInsets(
+            top: 2, leading: 2, bottom: 2, trailing: 2
+        )
+        
+        let itemTriple = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(
+                                                    widthDimension: .fractionalWidth(1/3),
+                                                    heightDimension: .fractionalHeight(1)))
+        
+        let verticalStackItem = NSCollectionLayoutItem(
+            layoutSize: NSCollectionLayoutSize(
+                widthDimension: .fractionalWidth(1),
+                heightDimension: .fractionalWidth(0.5)
+            )
+        )
+        verticalStackItem.contentInsets = NSDirectionalEdgeInsets(
+            top: 2, leading: 2, bottom: 2, trailing: 2)
+        
+        let verticalStackGroup = NSCollectionLayoutGroup.vertical(
+            layoutSize: NSCollectionLayoutSize(
+                widthDimension: .fractionalWidth(1/3),
+                heightDimension: .fractionalHeight(1)),
+            subitem: verticalStackItem,
+            count: 2)
+        
+        
+        
+        let tripleHorizontalGroup = NSCollectionLayoutGroup.horizontal(
+            layoutSize:  NSCollectionLayoutSize(
+                widthDimension: .fractionalWidth(1),
+                heightDimension: .fractionalHeight(1/3)),
+            subitem: itemTriple,
+            count: 3
+        )
+        
+        // group
+        let horizontalGroup = NSCollectionLayoutGroup.horizontal(
+            layoutSize: NSCollectionLayoutSize(
+                widthDimension: .fractionalWidth(1.0),
+                heightDimension: .fractionalHeight(2/3)
+            ),
+            subitems: [
+                item,
+                verticalStackGroup
+            ]
+        )
+        
+        let verticalGroup = NSCollectionLayoutGroup.vertical(
+            layoutSize: NSCollectionLayoutSize(
+                widthDimension: .fractionalWidth(1.0),
+                heightDimension: .fractionalHeight(3/5)
+            ),
+            subitems: [horizontalGroup, tripleHorizontalGroup]
+        )
+        
+        // sections
+        let section = NSCollectionLayoutSection(group: verticalGroup)
+        
+        // return
+        return UICollectionViewCompositionalLayout(section: section)
+    }
+    
 }
 

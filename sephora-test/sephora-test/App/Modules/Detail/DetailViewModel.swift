@@ -8,7 +8,7 @@
 import Foundation
 
 protocol DetailViewModelDelegate: AnyObject {
-
+    
 }
 
 final class DetailViewModel {
@@ -16,24 +16,25 @@ final class DetailViewModel {
     // MARK: - Properties
     
     private weak var delegate: DetailViewModelDelegate?
-        
+    
+    let productItem: ProductItem
+    
     // MARK: - Initializer
     
-    init(delegate: DetailViewModelDelegate?) {
+    init(delegate: DetailViewModelDelegate?, productItem: ProductItem) {
         self.delegate = delegate
+        self.productItem = productItem
     }
     
     // MARK: - Output
     
-    var labelText: ((String) -> Void)?
+    var visibleDetailItem: ((ProductItem) -> Void)?
     
     // MARK: - Input
     
     func viewDidLoad() {
-        labelText?("DetailView")
+        visibleDetailItem?(productItem)
     }
-    
-  
     
 }
 

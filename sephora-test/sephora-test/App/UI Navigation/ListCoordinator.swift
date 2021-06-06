@@ -40,19 +40,19 @@ extension ListViewCoordinator: CoordinatorProtocol {
         navigationController.pushViewController(viewController, animated: false)
     }
     
-    internal func createDetailView() {
-        let viewController = screens.createDetailViewController(delegate: self)
+    internal func createDetailView(productItem: ProductItem) {
+        let viewController = screens.createDetailViewController(delegate: self, productItem: productItem)
         navigationController.pushViewController(viewController, animated: false)
     }
 }
 
 extension ListViewCoordinator: ListViewModelDelegate {
-    func showDetailView() {
-        createDetailView()
+    func showDetailView(item: ProductItem) {
+        createDetailView(productItem: item)
     }
 }
 
 extension ListViewCoordinator: DetailViewModelDelegate {
-   
+    
 }
 

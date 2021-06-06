@@ -28,3 +28,12 @@ struct ProductItem: Equatable {
     let location: String
     let image: String
 }
+
+extension ProductItem {
+    init(items: Items) {
+        self.id = "\(items.id ?? "")"
+        self.description = "\(items.description ?? "")"
+        self.location = "\(items.location ?? "")"
+        self.image = "\(items.image ?? "")"
+    }
+}

@@ -21,13 +21,13 @@ class Repository: RepositoryType {
     init(context: Context) {
         self.context = context
     }
-
+    
     func getProductList(completion: @escaping (CompletionResult<Product>) -> Void, error: @escaping (String) -> Void) {
-
+        
         let urlString = "https://sephoraios.github.io/items.json"
-
+        
         guard let url = URL(string: urlString) else { return }
-
+        
         context.client.request(type: Product.self, endPointType: .GET, url: url, cancelledBy: token) { product in
             switch product {
             case .success(value: let productItem):
@@ -39,7 +39,5 @@ class Repository: RepositoryType {
             }
         }
     }
-
-    
 }
 

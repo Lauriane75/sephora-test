@@ -50,7 +50,6 @@ class MainCoordinator: CoordinatorProtocol {
         let navBar = navigationController.navigationBar
         navBar.setBackgroundImage(UIImage(), for: .default)
         navBar.shadowImage = UIImage()
-        navBar.tintColor = .white
+        navBar.tintColor = .black
     }
-    
 }

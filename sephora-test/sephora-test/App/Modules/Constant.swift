@@ -12,9 +12,9 @@ struct Constant {
         static let font16: UIFont = UIFont.systemFont(ofSize: 16)
     }
     struct color {
-    
+        
     }
     struct image {
-  
+        
     }
 }

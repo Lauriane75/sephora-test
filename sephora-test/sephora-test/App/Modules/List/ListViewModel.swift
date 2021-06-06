@@ -8,7 +8,8 @@
 import Foundation
 
 protocol ListViewModelDelegate: AnyObject {
-    func showDetailView()
+    func showDetailView(item: ProductItem)
+    
 }
 
 final class ListViewModel {
@@ -19,6 +20,14 @@ final class ListViewModel {
     
     private let repository: RepositoryType
     
+    private var productItems: [ProductItem] = [] {
+        didSet {
+            DispatchQueue.main.async {
+                self.visibleProductItem?(self.productItems)
+            }
+        }
+    }
+    
     // MARK: - Initializer
     
     init(delegate: ListViewModelDelegate?, repository: RepositoryType) {
@@ -28,28 +37,29 @@ final class ListViewModel {
     
     // MARK: - Output
     
-    var labelText: ((String) -> Void)?
+    var visibleProductItem: (([ProductItem]) -> Void)?
     
     // MARK: - Input
     
-    func viewDidLoad() {
-        labelText?("ListView")
-        
+    func viewWillAppear() {        
         repository.getProductList { result in
             switch result {
-            case .success(value: let productItem):
-                print("productItem = \(String(describing: productItem))")
+            case .success(value: let productList):
+                productList.items.enumerated().forEach { _, item in
+                    self.productItems.append(ProductItem(items: item))
+                }
             case .failure(error: let error):
                 print(error.localizedDescription)
             }
         } error: { _ in
-            print("call dataBase")
+            print("call dataBase = core data")
         }
     }
     
-    func didSelectItem() {
-        delegate?.showDetailView()
+    func didSelectItem(at index: Int) {
+        guard !self.productItems.isEmpty, index < self.productItems.count else { return }
+        let item = self.productItems[index]
+        delegate?.showDetailView(item: item)
     }
-    
 }
 

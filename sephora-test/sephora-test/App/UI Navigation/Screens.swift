@@ -10,11 +10,11 @@ import UIKit
 class Screens {
     
     // MARK: - Properties
-
+    
     private let context: Context
     
     // MARK: - Initializer
-
+    
     init(context: Context) {
         self.context = context
     }
@@ -27,12 +27,10 @@ class Screens {
         return viewController
     }
     
-    func createDetailViewController(delegate: DetailViewModelDelegate?) -> UIViewController {
+    func createDetailViewController(delegate: DetailViewModelDelegate?, productItem: ProductItem) -> UIViewController {
         let viewController = DetailViewController()
-        let viewModel = DetailViewModel(delegate: delegate)
+        let viewModel = DetailViewModel(delegate: delegate, productItem: productItem)
         viewController.viewModel = viewModel
         return viewController
     }
-    
-
 }
