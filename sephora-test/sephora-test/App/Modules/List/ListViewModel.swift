@@ -11,16 +11,19 @@ protocol ListViewModelDelegate: AnyObject {
     func showDetailView()
 }
 
-final class DetailViewModel {
+final class ListViewModel {
     
     // MARK: - Properties
     
     private weak var delegate: ListViewModelDelegate?
     
+    private let repository: RepositoryType
+    
     // MARK: - Initializer
     
-    init(delegate: ListViewModelDelegate?) {
+    init(delegate: ListViewModelDelegate?, repository: RepositoryType) {
         self.delegate = delegate
+        self.repository = repository
     }
     
     // MARK: - Output
@@ -28,6 +31,10 @@ final class DetailViewModel {
     var labelText: ((String) -> Void)?
     
     // MARK: - Input
+    
+    func viewDidLoad() {
+        labelText?("ListView")
+    }
     
     func didSelectItem() {
         delegate?.showDetailView()

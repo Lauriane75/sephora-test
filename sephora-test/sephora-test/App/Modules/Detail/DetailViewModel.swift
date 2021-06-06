@@ -16,7 +16,7 @@ final class DetailViewModel {
     // MARK: - Properties
     
     private weak var delegate: DetailViewModelDelegate?
-    
+        
     // MARK: - Initializer
     
     init(delegate: DetailViewModelDelegate?) {
@@ -28,6 +28,10 @@ final class DetailViewModel {
     var labelText: ((String) -> Void)?
     
     // MARK: - Input
+    
+    func viewDidLoad() {
+        labelText?("DetailView")
+    }
     
   
     
