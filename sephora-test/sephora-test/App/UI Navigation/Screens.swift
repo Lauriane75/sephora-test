@@ -22,7 +22,8 @@ class Screens {
     func createListViewController(delegate: ListViewModelDelegate?) -> UIViewController {
         let viewController = ListViewController()
         let repository = Repository(context: context)
-        let viewModel = ListViewModel(delegate: delegate, repository: repository)
+        let database = Database(context: context)
+        let viewModel = ListViewModel(delegate: delegate, repository: repository, database: database)
         viewController.viewModel = viewModel
         return viewController
     }

@@ -31,6 +31,7 @@
 		5BA1977A266D4CEF0018B19E /* CustomElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA19779266D4CEF0018B19E /* CustomElement.swift */; };
 		5BA1977D266D5C690018B19E /* ListCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA1977C266D5C690018B19E /* ListCollectionViewDataSource.swift */; };
 		5BA1977F266D5CA40018B19E /* ListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA1977E266D5CA40018B19E /* ListCollectionViewCell.swift */; };
+		5BA68FFC266E0F8E00139DA2 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA68FFB266E0F8E00139DA2 /* Database.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		5BA19779266D4CEF0018B19E /* CustomElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomElement.swift; sourceTree = "<group>"; };
 		5BA1977C266D5C690018B19E /* ListCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCollectionViewDataSource.swift; sourceTree = "<group>"; };
 		5BA1977E266D5CA40018B19E /* ListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCollectionViewCell.swift; sourceTree = "<group>"; };
+		5BA68FFB266E0F8E00139DA2 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +207,7 @@
 			children = (
 				5BA1972B266D43FD0018B19E /* sephora_test.xcdatamodeld */,
 				5B27BF5F266DF818005E437C /* CoreDataStack.swift */,
+				5BA68FFB266E0F8E00139DA2 /* Database.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -405,6 +408,7 @@
 				5BA19762266D46190018B19E /* DetailViewModel.swift in Sources */,
 				5BA1976C266D47100018B19E /* Token.swift in Sources */,
 				5BA19764266D469F0018B19E /* Screens.swift in Sources */,
+				5BA68FFC266E0F8E00139DA2 /* Database.swift in Sources */,
 				5BA1976A266D46FD0018B19E /* Context.swift in Sources */,
 				5BA1977A266D4CEF0018B19E /* CustomElement.swift in Sources */,
 				5BA19770266D47370018B19E /* HTTPEngine.swift in Sources */,

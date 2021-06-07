@@ -20,6 +20,9 @@ final class ListViewModel {
     
     private let repository: RepositoryType
     
+    private let database: DatabaseType
+
+    
     private var productItems: [ProductItem] = [] {
         didSet {
             DispatchQueue.main.async {
@@ -30,9 +33,10 @@ final class ListViewModel {
     
     // MARK: - Initializer
     
-    init(delegate: ListViewModelDelegate?, repository: RepositoryType) {
+    init(delegate: ListViewModelDelegate?, repository: RepositoryType, database: DatabaseType) {
         self.delegate = delegate
         self.repository = repository
+        self.database = database
     }
     
     // MARK: - Output
@@ -54,7 +58,7 @@ final class ListViewModel {
             case .failure(error: let error):
                 print(error.localizedDescription)
             }
-        } error: {  [weak self] _ in
+        } error: { [weak self] _ in
             guard let self = self else { return }
             self.getFromDatabase()
         }
@@ -70,19 +74,19 @@ final class ListViewModel {
     
     fileprivate func deleteAllDataBase() {
         DispatchQueue.main.async {
-            self.repository.deleteAllListInDataBase()
+            self.database.deleteAllListInDataBase()
         }
     }
 
     fileprivate func saveInDataBase(_ productItem: ProductItem) {
         DispatchQueue.main.async {
-            self.repository.saveProductItems(productItems: productItem)
+            self.database.saveProductItems(productItems: productItem)
         }
     }
     
     fileprivate func getFromDatabase() {
         DispatchQueue.main.async {
-            self.repository.getProductItems { result in
+            self.database.getProductItems { result in
                 guard !result.isEmpty else {
                     print("error")
                     return
