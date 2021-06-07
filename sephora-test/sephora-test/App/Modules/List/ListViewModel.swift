@@ -45,14 +45,18 @@ final class ListViewModel {
         repository.getProductList { result in
             switch result {
             case .success(value: let productList):
+                self.deleteAllDataBase()
                 productList.items.enumerated().forEach { _, item in
-                    self.productItems.append(ProductItem(items: item))
+                    let productItem = ProductItem(items: item)
+                    self.productItems.append(productItem)
+                    self.saveInDataBase(productItem)
                 }
             case .failure(error: let error):
                 print(error.localizedDescription)
             }
-        } error: { _ in
-            print("call dataBase = core data")
+        } error: {  [weak self] _ in
+            guard let self = self else { return }
+            self.getFromDatabase()
         }
     }
     
@@ -60,6 +64,32 @@ final class ListViewModel {
         guard !self.productItems.isEmpty, index < self.productItems.count else { return }
         let item = self.productItems[index]
         delegate?.showDetailView(item: item)
+    }
+    
+    // MARK: - Private Functions
+    
+    fileprivate func deleteAllDataBase() {
+        DispatchQueue.main.async {
+            self.repository.deleteAllListInDataBase()
+        }
+    }
+
+    fileprivate func saveInDataBase(_ productItem: ProductItem) {
+        DispatchQueue.main.async {
+            self.repository.saveProductItems(productItems: productItem)
+        }
+    }
+    
+    fileprivate func getFromDatabase() {
+        DispatchQueue.main.async {
+            self.repository.getProductItems { result in
+                guard !result.isEmpty else {
+                    print("error")
+                    return
+                }
+                self.productItems = result
+            }
+        }
     }
 }
 

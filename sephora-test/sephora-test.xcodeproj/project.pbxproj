@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B27BF60266DF818005E437C /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B27BF5F266DF818005E437C /* CoreDataStack.swift */; };
+		5B2D827A266E02A800B1E176 /* sephora_test.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5BA1972B266D43FD0018B19E /* sephora_test.xcdatamodeld */; };
 		5BA19723266D43FD0018B19E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA19722266D43FD0018B19E /* AppDelegate.swift */; };
 		5BA19725266D43FD0018B19E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA19724266D43FD0018B19E /* SceneDelegate.swift */; };
 		5BA19727266D43FD0018B19E /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA19726266D43FD0018B19E /* ListViewController.swift */; };
-		5BA1972D266D43FD0018B19E /* sephora_test.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5BA1972B266D43FD0018B19E /* sephora_test.xcdatamodeld */; };
 		5BA1972F266D43FE0018B19E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BA1972E266D43FE0018B19E /* Assets.xcassets */; };
 		5BA19732266D43FE0018B19E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BA19730266D43FE0018B19E /* LaunchScreen.storyboard */; };
-		5BA1973D266D43FE0018B19E /* sephora_testTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA1973C266D43FE0018B19E /* sephora_testTests.swift */; };
 		5BA19748266D43FE0018B19E /* sephora_testUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA19747266D43FE0018B19E /* sephora_testUITests.swift */; };
 		5BA1975E266D45C10018B19E /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA1975D266D45C10018B19E /* ListViewModel.swift */; };
 		5BA19760266D46020018B19E /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA1975F266D46020018B19E /* DetailViewController.swift */; };
@@ -51,6 +51,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5B27BF5F266DF818005E437C /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		5BA1971F266D43FD0018B19E /* sephora-test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "sephora-test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BA19722266D43FD0018B19E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5BA19724266D43FD0018B19E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,7 +61,6 @@
 		5BA19731266D43FE0018B19E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5BA19733266D43FE0018B19E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5BA19738266D43FE0018B19E /* sephora-testTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "sephora-testTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5BA1973C266D43FE0018B19E /* sephora_testTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sephora_testTests.swift; sourceTree = "<group>"; };
 		5BA1973E266D43FE0018B19E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5BA19743266D43FE0018B19E /* sephora-testUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "sephora-testUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BA19747266D43FE0018B19E /* sephora_testUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sephora_testUITests.swift; sourceTree = "<group>"; };
@@ -140,7 +140,6 @@
 		5BA1973B266D43FE0018B19E /* sephora-testTests */ = {
 			isa = PBXGroup;
 			children = (
-				5BA1973C266D43FE0018B19E /* sephora_testTests.swift */,
 				5BA1973E266D43FE0018B19E /* Info.plist */,
 			);
 			path = "sephora-testTests";
@@ -205,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				5BA1972B266D43FD0018B19E /* sephora_test.xcdatamodeld */,
+				5B27BF5F266DF818005E437C /* CoreDataStack.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -393,8 +393,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B27BF60266DF818005E437C /* CoreDataStack.swift in Sources */,
 				5BA1975E266D45C10018B19E /* ListViewModel.swift in Sources */,
 				5BA1977D266D5C690018B19E /* ListCollectionViewDataSource.swift in Sources */,
+				5B2D827A266E02A800B1E176 /* sephora_test.xcdatamodeld in Sources */,
 				5BA19778266D4CC70018B19E /* Constant.swift in Sources */,
 				5BA19727266D43FD0018B19E /* ListViewController.swift in Sources */,
 				5BA19773266D479D0018B19E /* Repository.swift in Sources */,
@@ -409,7 +411,6 @@
 				5BA19776266D4A7B0018B19E /* Product.swift in Sources */,
 				5BA19723266D43FD0018B19E /* AppDelegate.swift in Sources */,
 				5BA19760266D46020018B19E /* DetailViewController.swift in Sources */,
-				5BA1972D266D43FD0018B19E /* sephora_test.xcdatamodeld in Sources */,
 				5BA19766266D46AA0018B19E /* MainCoordinator.swift in Sources */,
 				5BA19768266D46B50018B19E /* ListCoordinator.swift in Sources */,
 				5BA19725266D43FD0018B19E /* SceneDelegate.swift in Sources */,
@@ -420,7 +421,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5BA1973D266D43FE0018B19E /* sephora_testTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
