@@ -32,10 +32,10 @@ class Database: DatabaseType {
         productObject.descriptionProduct = productItems.description
         productObject.locationProduct = productItems.location
         productObject.imageUrlProduct = productItems.image
-
+        
         context.stack.saveContext()
     }
-
+    
     func deleteAllListInDataBase() {
         let requestProduct: NSFetchRequest<ProductObject> = ProductObject.fetchRequest()
         guard let productListItems = try? self.context.stack.context.fetch(requestProduct) else { return }
@@ -46,7 +46,7 @@ class Database: DatabaseType {
             self.context.stack.saveContext()
         }
     }
-
+    
     func getProductItems(callback: @escaping ([ProductItem]) -> Void) {
         let requestProduct: NSFetchRequest<ProductObject> = ProductObject.fetchRequest()
         guard let productItems = try? context.stack.context.fetch(requestProduct) else { return }

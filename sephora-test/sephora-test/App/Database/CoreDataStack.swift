@@ -13,17 +13,17 @@ enum CoreDataStackType {
 }
 
 final class CoreDataStack {
-
+    
     // MARK: - Properties
     
     private let container: NSPersistentContainer
-
+    
     var context: NSManagedObjectContext {
         return container.viewContext
     }
-
+    
     // MARK: - Initializer
-
+    
     init(modelName: String, type: CoreDataStackType) {
         container = NSPersistentContainer(name: modelName)
         if type == .test {
@@ -37,14 +37,14 @@ final class CoreDataStack {
             }
         })
     }
-
+    
     // MARK: - Core Data Saving support
-
+    
     func saveContext() {
-          if context.hasChanges {
-              try? context.save()
-          }
-      }
-
+        if context.hasChanges {
+            try? context.save()
+        }
+    }
+    
     
 }

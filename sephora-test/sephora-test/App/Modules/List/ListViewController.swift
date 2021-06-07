@@ -43,7 +43,7 @@ class ListViewController: UIViewController {
         collectionView.delegate = listCollectionViewDataSource
         
         setElementaddSubview()
-                
+        
         viewModel.viewDidLoad()
         
         bind(to: viewModel)

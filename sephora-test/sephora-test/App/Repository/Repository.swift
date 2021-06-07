@@ -5,7 +5,6 @@
 //  Created by Lau on 06/06/2021.
 //
 
-import CoreData
 import Foundation
 
 protocol RepositoryType: AnyObject {
@@ -16,7 +15,6 @@ class Repository: RepositoryType {
     
     private let token = Token()
     private let context: Context
-    private var productObjects: [ProductObject] = []
     
     // MARK: - Initializer
     

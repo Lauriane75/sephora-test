@@ -21,7 +21,7 @@ final class ListViewModel {
     private let repository: RepositoryType
     
     private let database: DatabaseType
-
+    
     
     private var productItems: [ProductItem] = [] {
         didSet {
@@ -77,7 +77,7 @@ final class ListViewModel {
             self.database.deleteAllListInDataBase()
         }
     }
-
+    
     fileprivate func saveInDataBase(_ productItem: ProductItem) {
         DispatchQueue.main.async {
             self.database.saveProductItems(productItems: productItem)
