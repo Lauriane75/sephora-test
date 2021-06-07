@@ -18,7 +18,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: winScene)
         
         let client = HTTPClient()
-        context = Context(client: client)
+        let stack = CoreDataStack(modelName: "sephora_test",
+                                  type: .prod)
+        context = Context(client: client, stack: stack)
         let screens = Screens(context: context)
         
         mainCoordinator = MainCoordinator(window: window, screens: screens)

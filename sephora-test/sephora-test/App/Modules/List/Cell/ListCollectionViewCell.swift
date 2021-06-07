@@ -31,7 +31,6 @@ final class ListCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         contentView.addSubview(imageView)
-//        contentView.addSubview(idLabel)
     }
     
     required init?(coder: NSCoder) {

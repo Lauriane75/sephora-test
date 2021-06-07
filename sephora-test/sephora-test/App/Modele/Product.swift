@@ -37,3 +37,12 @@ extension ProductItem {
         self.image = "\(items.image ?? "")"
     }
 }
+
+extension ProductItem {
+    init(object: ProductObject) {
+        self.id = object.idProduct ?? ""
+        self.description = object.descriptionProduct ?? ""
+        self.location = object.locationProduct ?? ""
+        self.image = object.imageUrlProduct ?? ""
+    }
+}
