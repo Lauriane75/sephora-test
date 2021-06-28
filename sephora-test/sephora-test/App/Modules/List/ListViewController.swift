@@ -106,7 +106,7 @@ class ListViewController: UIViewController {
             subitem: verticalStackItem,
             count: 2)
         
-        
+        // group
         
         let tripleHorizontalGroup = NSCollectionLayoutGroup.horizontal(
             layoutSize:  NSCollectionLayoutSize(
@@ -116,7 +116,6 @@ class ListViewController: UIViewController {
             count: 3
         )
         
-        // group
         let horizontalGroup = NSCollectionLayoutGroup.horizontal(
             layoutSize: NSCollectionLayoutSize(
                 widthDimension: .fractionalWidth(1.0),
