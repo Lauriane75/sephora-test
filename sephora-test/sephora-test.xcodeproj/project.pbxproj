@@ -12,6 +12,9 @@
 		5B6CD130268A1011008EB753 /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = 5B6CD12F268A1011008EB753 /* RxBlocking */; };
 		5B6CD132268A1011008EB753 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 5B6CD131268A1011008EB753 /* RxCocoa */; };
 		5B6CD134268A1011008EB753 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5B6CD133268A1011008EB753 /* RxSwift */; };
+		5B6CD137268A12CB008EB753 /* ListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6CD136268A12CB008EB753 /* ListViewModelTests.swift */; };
+		5B6CD139268A15DC008EB753 /* RepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6CD138268A15DC008EB753 /* RepositoryTests.swift */; };
+		5B6CD13B268A1632008EB753 /* MockHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6CD13A268A1632008EB753 /* MockHTTPClient.swift */; };
 		5BA19723266D43FD0018B19E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA19722266D43FD0018B19E /* AppDelegate.swift */; };
 		5BA19725266D43FD0018B19E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA19724266D43FD0018B19E /* SceneDelegate.swift */; };
 		5BA19727266D43FD0018B19E /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA19726266D43FD0018B19E /* ListViewController.swift */; };
@@ -56,6 +59,10 @@
 
 /* Begin PBXFileReference section */
 		5B27BF5F266DF818005E437C /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		5B6CD135268A12CA008EB753 /* sephora-testTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "sephora-testTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		5B6CD136268A12CB008EB753 /* ListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModelTests.swift; sourceTree = "<group>"; };
+		5B6CD138268A15DC008EB753 /* RepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTests.swift; sourceTree = "<group>"; };
+		5B6CD13A268A1632008EB753 /* MockHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHTTPClient.swift; sourceTree = "<group>"; };
 		5BA1971F266D43FD0018B19E /* sephora-test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "sephora-test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BA19722266D43FD0018B19E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5BA19724266D43FD0018B19E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -116,6 +123,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B6CD13C268A163F008EB753 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				5B6CD13A268A1632008EB753 /* MockHTTPClient.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		5BA19716266D43FD0018B19E = {
 			isa = PBXGroup;
 			children = (
@@ -148,7 +163,11 @@
 		5BA1973B266D43FE0018B19E /* sephora-testTests */ = {
 			isa = PBXGroup;
 			children = (
+				5B6CD138268A15DC008EB753 /* RepositoryTests.swift */,
+				5B6CD136268A12CB008EB753 /* ListViewModelTests.swift */,
+				5B6CD13C268A163F008EB753 /* Network */,
 				5BA1973E266D43FE0018B19E /* Info.plist */,
+				5B6CD135268A12CA008EB753 /* sephora-testTests-Bridging-Header.h */,
 			);
 			path = "sephora-testTests";
 			sourceTree = "<group>";
@@ -350,6 +369,7 @@
 					};
 					5BA19737266D43FE0018B19E = {
 						CreatedOnToolsVersion = 12.5;
+						LastSwiftMigration = 1250;
 						TestTargetID = 5BA1971E266D43FD0018B19E;
 					};
 					5BA19742266D43FE0018B19E = {
@@ -441,6 +461,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B6CD137268A12CB008EB753 /* ListViewModelTests.swift in Sources */,
+				5B6CD139268A15DC008EB753 /* RepositoryTests.swift in Sources */,
+				5B6CD13B268A1632008EB753 /* MockHTTPClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -646,6 +669,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 568UZNMWK9;
 				INFOPLIST_FILE = "sephora-testTests/Info.plist";
@@ -657,6 +681,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "haydari.lauriane.com.sephora-testTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "sephora-testTests/sephora-testTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/sephora-test.app/sephora-test";
@@ -668,6 +694,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 568UZNMWK9;
 				INFOPLIST_FILE = "sephora-testTests/Info.plist";
@@ -679,6 +706,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "haydari.lauriane.com.sephora-testTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "sephora-testTests/sephora-testTests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/sephora-test.app/sephora-test";
