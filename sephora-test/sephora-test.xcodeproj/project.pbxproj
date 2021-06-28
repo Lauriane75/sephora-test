@@ -3,12 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		5B27BF60266DF818005E437C /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B27BF5F266DF818005E437C /* CoreDataStack.swift */; };
 		5B2D827A266E02A800B1E176 /* sephora_test.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5BA1972B266D43FD0018B19E /* sephora_test.xcdatamodeld */; };
+		5B6CD130268A1011008EB753 /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = 5B6CD12F268A1011008EB753 /* RxBlocking */; };
+		5B6CD132268A1011008EB753 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 5B6CD131268A1011008EB753 /* RxCocoa */; };
+		5B6CD134268A1011008EB753 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5B6CD133268A1011008EB753 /* RxSwift */; };
 		5BA19723266D43FD0018B19E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA19722266D43FD0018B19E /* AppDelegate.swift */; };
 		5BA19725266D43FD0018B19E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA19724266D43FD0018B19E /* SceneDelegate.swift */; };
 		5BA19727266D43FD0018B19E /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA19726266D43FD0018B19E /* ListViewController.swift */; };
@@ -90,6 +93,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B6CD134268A1011008EB753 /* RxSwift in Frameworks */,
+				5B6CD132268A1011008EB753 /* RxCocoa in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B6CD130268A1011008EB753 /* RxBlocking in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +289,10 @@
 			dependencies = (
 			);
 			name = "sephora-test";
+			packageProductDependencies = (
+				5B6CD131268A1011008EB753 /* RxCocoa */,
+				5B6CD133268A1011008EB753 /* RxSwift */,
+			);
 			productName = "sephora-test";
 			productReference = 5BA1971F266D43FD0018B19E /* sephora-test.app */;
 			productType = "com.apple.product-type.application";
@@ -301,6 +311,9 @@
 				5BA1973A266D43FE0018B19E /* PBXTargetDependency */,
 			);
 			name = "sephora-testTests";
+			packageProductDependencies = (
+				5B6CD12F268A1011008EB753 /* RxBlocking */,
+			);
 			productName = "sephora-testTests";
 			productReference = 5BA19738266D43FE0018B19E /* sephora-testTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -354,6 +367,9 @@
 				Base,
 			);
 			mainGroup = 5BA19716266D43FD0018B19E;
+			packageReferences = (
+				5B6CD12E268A1011008EB753 /* XCRemoteSwiftPackageReference "RxSwift" */,
+			);
 			productRefGroup = 5BA19720266D43FD0018B19E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -587,6 +603,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.0.0;
 				DEVELOPMENT_TEAM = 568UZNMWK9;
+				ENABLE_TESTING_SEARCH_PATHS = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "sephora-test/SupportingFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -608,6 +626,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.0.0;
 				DEVELOPMENT_TEAM = 568UZNMWK9;
+				ENABLE_TESTING_SEARCH_PATHS = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "sephora-test/SupportingFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -745,6 +765,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5B6CD12E268A1011008EB753 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5B6CD12F268A1011008EB753 /* RxBlocking */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5B6CD12E268A1011008EB753 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxBlocking;
+		};
+		5B6CD131268A1011008EB753 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5B6CD12E268A1011008EB753 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		5B6CD133268A1011008EB753 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5B6CD12E268A1011008EB753 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		5BA1972B266D43FD0018B19E /* sephora_test.xcdatamodeld */ = {
