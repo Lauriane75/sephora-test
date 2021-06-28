@@ -26,7 +26,9 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "NO">
+      shouldUseLaunchSchemeArgsEnv = "NO"
+      codeCoverageEnabled = "YES"
+      onlyGenerateCoverageForSpecifiedTargets = "YES">
       <EnvironmentVariables>
          <EnvironmentVariable
             key = "IS_RUNNING_UNIT_TESTS"
@@ -34,6 +36,57 @@
             isEnabled = "YES">
          </EnvironmentVariable>
       </EnvironmentVariables>
+      <CodeCoverageTargets>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "RxBlocking"
+            BuildableName = "RxBlocking"
+            BlueprintName = "RxBlocking"
+            ReferencedContainer = "container:../../../../../Library/Developer/Xcode/DerivedData/sephora-test-grbrffihzhstrhdzffhqqastieiv/SourcePackages/checkouts/RxSwift">
+         </BuildableReference>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "RxTest"
+            BuildableName = "RxTest"
+            BlueprintName = "RxTest"
+            ReferencedContainer = "container:../../../../../Library/Developer/Xcode/DerivedData/sephora-test-grbrffihzhstrhdzffhqqastieiv/SourcePackages/checkouts/RxSwift">
+         </BuildableReference>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "5BA1971E266D43FD0018B19E"
+            BuildableName = "sephora-test.app"
+            BlueprintName = "sephora-test"
+            ReferencedContainer = "container:sephora-test.xcodeproj">
+         </BuildableReference>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "5BA19737266D43FE0018B19E"
+            BuildableName = "sephora-testTests.xctest"
+            BlueprintName = "sephora-testTests"
+            ReferencedContainer = "container:sephora-test.xcodeproj">
+         </BuildableReference>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "RxCocoa"
+            BuildableName = "RxCocoa"
+            BlueprintName = "RxCocoa"
+            ReferencedContainer = "container:../../../../../Library/Developer/Xcode/DerivedData/sephora-test-grbrffihzhstrhdzffhqqastieiv/SourcePackages/checkouts/RxSwift">
+         </BuildableReference>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "RxRelay"
+            BuildableName = "RxRelay"
+            BlueprintName = "RxRelay"
+            ReferencedContainer = "container:../../../../../Library/Developer/Xcode/DerivedData/sephora-test-grbrffihzhstrhdzffhqqastieiv/SourcePackages/checkouts/RxSwift">
+         </BuildableReference>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "RxSwift"
+            BuildableName = "RxSwift"
+            BlueprintName = "RxSwift"
+            ReferencedContainer = "container:../../../../../Library/Developer/Xcode/DerivedData/sephora-test-grbrffihzhstrhdzffhqqastieiv/SourcePackages/checkouts/RxSwift">
+         </BuildableReference>
+      </CodeCoverageTargets>
       <Testables>
          <TestableReference
             skipped = "NO">

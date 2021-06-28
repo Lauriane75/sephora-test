@@ -8,6 +8,7 @@
 import CoreData
 import Foundation
 
+
 protocol DatabaseType: AnyObject {
     
     func saveProductItems(productItems: ProductItem)

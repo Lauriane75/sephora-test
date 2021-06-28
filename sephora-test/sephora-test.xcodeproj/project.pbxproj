@@ -138,6 +138,7 @@
 		5B6CD13D268A4827008EB753 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				5B6CD138268A15DC008EB753 /* RepositoryTests.swift */,
 				5B6CD13E268A483E008EB753 /* MockRepository.swift */,
 			);
 			path = Repository;
@@ -183,10 +184,9 @@
 		5BA1973B266D43FE0018B19E /* sephora-testTests */ = {
 			isa = PBXGroup;
 			children = (
+				5B6CD136268A12CB008EB753 /* ListViewModelTests.swift */,
 				5B6CD140268A4A04008EB753 /* DataBase */,
 				5B6CD13D268A4827008EB753 /* Repository */,
-				5B6CD138268A15DC008EB753 /* RepositoryTests.swift */,
-				5B6CD136268A12CB008EB753 /* ListViewModelTests.swift */,
 				5B6CD13C268A163F008EB753 /* Network */,
 				5BA1973E266D43FE0018B19E /* Info.plist */,
 				5B6CD135268A12CA008EB753 /* sephora-testTests-Bridging-Header.h */,

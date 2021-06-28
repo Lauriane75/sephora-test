@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
 
 class ListViewController: UIViewController {
     
@@ -18,6 +20,7 @@ class ListViewController: UIViewController {
     var viewModel: ListViewModel!
     
     private var listCollectionViewDataSource = ListCollectionViewDataSource()
+    private let disposeBag = DisposeBag()
     
     // MARK: - Initializer
     
@@ -35,18 +38,13 @@ class ListViewController: UIViewController {
     // MARK: - View life cycle
     
     override func viewDidLoad() {
-        super.viewDidLoad()                
-        collectionView.register(ListCollectionViewCell.self, forCellWithReuseIdentifier: "ListCollectionViewCell")
-        collectionView.frame = view.bounds
-        collectionView.backgroundColor = .white
-        collectionView.dataSource = listCollectionViewDataSource
-        collectionView.delegate = listCollectionViewDataSource
+        super.viewDidLoad()
         
-        setElementaddSubview()
-        
-        viewModel.viewDidLoad()
-        
-        bind(to: viewModel)
+//        viewModel.viewDidLoad()
+//        bind(to: viewModel)
+    
+        bindViewModel()
+        setupView()
         
         bind(to: listCollectionViewDataSource)
     }
@@ -55,6 +53,36 @@ class ListViewController: UIViewController {
     
     
     // MARK: - Private Functions
+    
+    private func setupView() {
+        collectionView.register(ListCollectionViewCell.self, forCellWithReuseIdentifier: "ListCollectionViewCell")
+        collectionView.frame = view.bounds
+        collectionView.backgroundColor = .white
+        collectionView.dataSource = listCollectionViewDataSource
+        collectionView.delegate = listCollectionViewDataSource
+        
+        setElementaddSubview()
+    }
+    
+    func bindViewModel() {
+        let viewDidLoad = rx
+            .viewIsLoaded
+        
+        let inputs = ListViewModel.Inputs(
+            viewDidLoad: viewDidLoad
+        )
+        
+        let outputs = viewModel.transform(inputs: inputs)
+        
+        outputs
+            .visibleProductItem
+            .asDriver(onErrorJustReturn: [ProductItem]())
+            .drive(onNext: { [weak self] item in
+                guard let self = self else { return }
+                self.listCollectionViewDataSource.update(with: item)
+            })
+            .disposed(by: disposeBag)
+    }
     
     func setElementaddSubview() {
         view.addSubview(collectionView)
@@ -144,3 +172,8 @@ class ListViewController: UIViewController {
     
 }
 
+public extension Reactive where Base: UIViewController {
+    var viewIsLoaded: Observable<Void> {
+        base.rx.sentMessage(#selector(UIViewController.viewWillAppear(_:))).map { _ in }.take(1)
+    }
+}

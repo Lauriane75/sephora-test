@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
 
 protocol ListViewModelDelegate: AnyObject {
     func showDetailView(item: ProductItem)
@@ -21,7 +23,6 @@ final class ListViewModel {
     private let repository: RepositoryType
     
     private let database: DatabaseType
-    
     
     private var productItems: [ProductItem] = [] {
         didSet {
@@ -41,9 +42,17 @@ final class ListViewModel {
     
     // MARK: - Output
     
+    struct Outputs {
+        let visibleProductItem: Observable<[ProductItem]>
+    }
+    
     var visibleProductItem: (([ProductItem]) -> Void)?
     
     // MARK: - Input
+    
+    struct Inputs {
+        let viewDidLoad: Observable<Void>
+    }
     
     func viewDidLoad() {
         repository.getProductList { result in
@@ -69,6 +78,39 @@ final class ListViewModel {
         let item = self.productItems[index]
         delegate?.showDetailView(item: item)
     }
+    
+    // MARK: - Transform
+    
+    func transform(inputs: Inputs) -> Outputs {
+
+        repository.getProductList { result in
+            switch result {
+            case .success(value: let productList):
+                self.deleteAllDataBase()
+                productList.items.enumerated().forEach { _, item in
+                    let productItem = ProductItem(items: item)
+                    self.productItems.append(productItem)
+                    self.saveInDataBase(productItem)
+                }
+            case .failure(error: let error):
+                print(error.localizedDescription)
+            }
+        } error: { [weak self] _ in
+            guard let self = self else { return }
+            self.getFromDatabase()
+        }
+        
+        let initProductList = inputs
+            .viewDidLoad
+            .map { self.productItems }
+        
+        let visibleProductItem = Observable.merge(initProductList)
+        
+        return .init(visibleProductItem: visibleProductItem)
+        
+        
+    }
+
     
     // MARK: - Private Functions
     

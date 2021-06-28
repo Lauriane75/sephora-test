@@ -10,11 +10,23 @@ import RxSwift
 import RxCocoa
 @testable import sephora_test
 
+class MockListViewModelDelegate: ListViewModelDelegate {
+    var productItem: ProductItem?
+    
+    func showDetailView(item: ProductItem) {
+        self.productItem = item
+    }
+}
+
 class ListViewModelTests: XCTestCase {
     
     private var disposeBag: DisposeBag!
     private var viewDidLoad: PublishSubject<Void>!
     private var didSelectItem: PublishSubject<Void>!
+    
+    var delegate = MockListViewModelDelegate()
+    let repository = MockRepository()
+    let database = MockDatabase()
     
     override func setUp() {
         super.setUp()
@@ -26,8 +38,8 @@ class ListViewModelTests: XCTestCase {
     
     func test_ViewDidLoad_returnsProducts() {
 //        let expectation = self.expectation(description: "Return products data")
-    
-    
+//        let viewModel = ListViewModel(delegate: delegate, repository: repository, database: database)
+
     }
     
 
